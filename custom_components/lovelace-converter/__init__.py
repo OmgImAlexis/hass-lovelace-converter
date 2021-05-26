@@ -1,5 +1,6 @@
 """Lovelace JSON config converter"""
-import shutil
+import os
+import glob
 import logging
 import simplejson as json
 import yaml
@@ -40,8 +41,19 @@ def setup(hass, config):
         lovelaceYaml.write("\nviews: !include_dir_list ui-lovelace/")
         lovelaceYaml.close()
 
-        # Wipe the directory out before writing the views incase they deleted a view
-        shutil.rmtree(directory)
+        # Make the directory if it doesn't exist yet
+        try:
+            os.mkdir(directory)
+        except Exception:
+            pass
+
+        # Delete all the views incase they deleted a single view
+        fileList = glob.glob(directory + "/*.yaml")
+        for filePath in fileList:
+            try:
+                os.remove(filePath)
+            except Exception:
+                pass
 
         # Write the views
         views = lovelaceConfig["views"]
