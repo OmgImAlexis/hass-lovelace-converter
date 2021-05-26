@@ -1,0 +1,5 @@
+convert:
+  # Service name as shown in UI
+  convert: Convert config to YAML
+  # Description of the service
+  description: Converts config from JSON to YAML for share-ability
