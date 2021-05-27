@@ -1,7 +1,7 @@
 {
     "domain": "lovelace_converter",
     "name": "Lovelace Converter",
-    "documentation": "https://www.example.com",
+    "documentation": "https://github.com/omgimalexis/hass-lovelace-converter",
     "dependencies": [],
     "codeowners": [
         "@OmgImAlexis"

@@ -2,5 +2,6 @@
     "name": "Lovelace Converter",
     "zip_release": true,
     "hide_default_branch": true,
+    "render_readme": true,
     "filename": "lovelace_converter.zip"
 }
